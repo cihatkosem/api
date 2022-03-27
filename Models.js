@@ -1,4 +1,7 @@
+const mongoose = require('mongoose')
+const Functions = require("./Functions")
 let comment, project, user, view, shared_content, verification;
+
 module.exports.comment = comment = mongoose.model("comments", mongoose.Schema({
     userId: { type: String, required: true },
     userName: { type: String, required: true },
@@ -47,66 +50,3 @@ module.exports.view = view = mongoose.model("views", mongoose.Schema({
     views: { type: String, required: true },
     dailyvisits: { type: Array, default: [] }
 }))
-
-module.exports.functions = {
-    comment: {
-        save: async function Comment(userid, username, commentstext) {
-            comment.updateOne(
-                { userId: userid },
-                { userName: username, comments: commentstext, date: await Functions.day(true, true) },
-                { upsert: true }
-            ).catch(err => console.log(err))
-        },
-        delete: async function Comment(id) {
-            await comment.deleteOne({ userId: id }).catch(err => console.log(err))
-        }
-    },
-    shared_content: {
-        save: async function SharedContent(a, x, y, z, t, w, q) {
-            shared_content.updateOne({ id: a }, { author: x, share_date: y, title: z, description: t, image: w, content: q, visits: "1" }, { upsert: true })
-                .catch(err => console.log(err))
-        },
-        delete: async function SharedContent(id) {
-            await shared_content.deleteOne({ id: id }).catch(err => console.log(err))
-            return res.redirect("/")
-        },
-        edit: async function SharedContent(id, user, users, req, res) {
-            let datasc = await shared_content.findOne({ id: id })
-            if (!datasc) return res.render("error", { message: Messages.thereisnotpost, button: Messages.go_home, href: "/", dual_button: "", conf: "search" })
-            let data = { post: datasc, twitter: await Functions.Find.twitter.user("cihatksm"), users }
-            return res.render('shared_content', { user, data, edit: "true" })
-        },
-    },
-    project: {
-        save: async function Project(name, description) {
-            if (!name) return;
-            project.updateOne(
-                { projectname: name },
-                { projectdesc: description, date: await Functions.day(true, true) },
-                { upsert: true }
-            ).catch(err => console.log(err))
-        },
-        delete: async function Project(name) {
-            if (!name) return;
-            await project.deleteOne({ projectname: name }).catch(err => console.log(err))
-        }
-    },
-    view: {
-        save: async function View(name) {
-            if (!name) return;
-            view.updateOne({ page: name }, { views: 1 }, { upsert: true }).catch(err => console.log(err))
-        },
-        delete: async function View(name) {
-            if (!name) return;
-            await view.deleteOne({ page: name }).catch(err => console.log(err))
-        }
-    },
-    verification: {
-        save: async function VerificationS(id, token) {
-            await verification.updateOne({ id: id }, { token: token + id },{ upsert: true }).catch(err => console.log(err))
-        },
-        delete: async function VerificationD(id) {
-            await verification.deleteOne({ id: id },{ upsert: true }).catch(err => console.log(err))
-        }
-    }
-}

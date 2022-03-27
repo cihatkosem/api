@@ -1,3 +1,6 @@
+const Functions = require("./Functions")
+const Models = require("./Models")
+
 module.exports.drizzly = {
     user: async function apifunc1(req, res, next) {
         let user = req.params.name ? await Models.user.findOne({ displayname: req.params.name.toLowerCase() }) : null

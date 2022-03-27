@@ -3,24 +3,15 @@
 ### 💻 API Service: 
 
 > Using Drizzly User Api: 
-<a href="https://api.drizzlydeveloper.xyz/drizzly/users/500527985061789711" target="_blank"> /drizzly/users/500527985061789711 </a> 
-<br>
-
+<a href="https://api.drizzlydeveloper.xyz/drizzly/users/500527985061789711" target="_blank"> /drizzly/users/500527985061789711 </a> <br>
 > Using Discord User Api: 
-<a href="https://api.drizzlydeveloper.xyz/discord/users/500527985061789711" target="_blank"> /discord/users/500527985061789711 </a> 
-<br>
-
+<a href="https://api.drizzlydeveloper.xyz/discord/users/500527985061789711" target="_blank"> /discord/users/500527985061789711 </a> <br>
 > Using Twitter User Api: 
-<a href="https://api.drizzlydeveloper.xyz/twitter/users/cihatksm" target="_blank"> /twitter/users/cihatksm </a> 
-<br>
-
+<a href="https://api.drizzlydeveloper.xyz/twitter/users/cihatksm" target="_blank"> /twitter/users/cihatksm </a> <br>
 > Using Weather Api: 
-<a href="https://api.drizzlydeveloper.xyz/weather/kocaeli" target="_blank"> /weather/kocaeli </a> 
-<br>
-
+<a href="https://api.drizzlydeveloper.xyz/weather/kocaeli" target="_blank"> /weather/kocaeli </a> <br>
 > Platform to test -> 
-<a href="https://reqbin.com/" target="_blank"> reqbin.com </a>
-<br>
+<a href="https://reqbin.com/" target="_blank"> reqbin.com </a> <br>
 
 ### 📈 Stats:
 <a href="https://stats.uptimerobot.com/QAoJjhX990" target="_blank"> 

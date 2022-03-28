@@ -1,13 +1,11 @@
-const { Client, Intents, UserFlags } = require("discord.js"),
-    client = new Client({
-        intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES],
-        allowedMentions: { parse: ['users', 'roles'], repliedUser: true }
-    }),
-    app = require('express')(),
-    rateLimit = require('express-rate-limit'),
-    apiLimit = rateLimit({ windowMs: 10 * 1000, max: 1, message: { status: "API limit exceeded" } })
+const { Client, Intents, UserFlags } = require("discord.js")
+const intents = [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES]
+const client = new Client({ intents, allowedMentions: { parse: ['users', 'roles'], repliedUser: true }})
+const app = require('express')()
+const rateLimit = require('express-rate-limit')
+const apiLimit = rateLimit({ windowMs: 10 * 1000, max: 1, message: { status: "API limit exceeded" } })
 
-const config = require('./config.json')
+const config = require('./config.json') ? require('./config.json') : null
 const mongoose = require('mongoose')
 const Models = require("./Models")
 const needle = require('needle')
@@ -42,7 +40,7 @@ module.exports.Connection = async function Connection() {
 }
 
 module.exports.pages = pages = {
-    function: async function func(app) {
+    function: async function func() {
         let api = require("./Api.js")
 
         app.get("/", (req, res) => res.redirect("http://drizzlydeveloper.xyz/"))

@@ -5,7 +5,7 @@ const app = require('express')()
 const rateLimit = require('express-rate-limit')
 const apiLimit = rateLimit({ windowMs: 10 * 1000, max: 1, message: { status: "API limit exceeded" } })
 
-const config = require('./config.json') ? require('./config.json') : null
+const config = require(`./${process.env.TOKEN ? "" : "_"}config.json`) 
 const mongoose = require('mongoose')
 const Models = require("./Models")
 const needle = require('needle')

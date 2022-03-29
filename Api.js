@@ -25,7 +25,7 @@ module.exports.drizzly = {
         return res.json(data)
     },
     users: async function apifunc11(req, res, next) {
-        let users = req.params.name ? await Models.user.findOne({ displayname: req.params.name.toLowerCase() }) : null
+        let users = req.params.name ? await Models.user.find() : null
         let token = req.params.token ? await Models.verification.findOne({ verification: req.params.token }) : null
         let data = {
             status: "OK",

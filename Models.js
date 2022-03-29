@@ -40,9 +40,8 @@ module.exports.user = user = mongoose.model("user", mongoose.Schema({
 }))
 
 module.exports.verification = verification = mongoose.model("verification", mongoose.Schema({
-    id: { type: String, required: true },
-    token: { type: String, required: true },
     current: { type: String, required: true },
+    verification: { type: String, required: true }
 }))
 
 module.exports.view = view = mongoose.model("views", mongoose.Schema({

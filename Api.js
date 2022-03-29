@@ -23,6 +23,17 @@ module.exports.drizzly = {
             data: token && token.current == "true" ? user : gUser
         }
         return res.json(data)
+    },
+    users: async function apifunc11(req, res, next) {
+        let users = req.params.name ? await Models.user.findOne({ displayname: req.params.name.toLowerCase() }) : null
+        let token = req.params.token ? await Models.verification.findOne({ verification: req.params.token }) : null
+        let data = {
+            status: "OK",
+            url: req.url,
+            token: req.params.token ? { get: req.params.token, status: token.current == "true" ? "authorized" : "expired" } : "not written",
+            data: token ? token.current == "true" ? users : "expired" : "not written"
+        }
+        return res.json(data)
     }
 }
 module.exports.discord = async function apifunc2(req, res, next) {

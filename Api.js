@@ -3,7 +3,9 @@ const Models = require("./Models")
 
 module.exports.drizzly = {
     user: async function apifunc1(req, res, next) {
-        let user = req.params.name ? await Models.user.findOne({ displayname: req.params.name.toLowerCase() }) : null
+        let user1 = req.params.name ? await Models.user.findOne({ displayname: req.params.name.toLowerCase() }) : null
+        let user2 = req.params.name ? await Models.user.findOne({ id: req.params.name }) : null
+        let user = user1 ? user1 : user2 ? user2 : null
         if (user) {
             user.avatar = user ? await Functions.user.avatar(user.username) : null
             user.banner = user ? await Functions.user.banner(user.username) : null

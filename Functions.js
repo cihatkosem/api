@@ -43,7 +43,7 @@ module.exports.pages = pages = {
     function: async function func() {
         let api = require("./Api.js")
 
-        app.get("/", (req, res) => res.redirect("http://drizzlydeveloper.xyz/"))
+        app.get("/", (req, res) => res.redirect("http://drizzlydeveloper.xyz/api"))
         app.get("/drizzly/users&:token", apiLimit, api.drizzly.users)
         app.get("/drizzly/users/:name", apiLimit, api.drizzly.user)
         app.get("/drizzly/users/:name&:token", apiLimit, api.drizzly.user)

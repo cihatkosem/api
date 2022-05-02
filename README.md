@@ -3,7 +3,7 @@
 ### 💻 API Service: 
 
 > Using Drizzly User Api: 
-<a href="https://api.drizzlydeveloper.xyz/drizzly/users/500527985061789711" target="_blank"> /drizzly/users/500527985061789711 </a> <br>
+<a href="https://api.drizzlydeveloper.xyz/drizzly/users/cihatksm" target="_blank"> /drizzly/users/cihatksm </a> <br>
 > Using Discord User Api: 
 <a href="https://api.drizzlydeveloper.xyz/discord/users/500527985061789711" target="_blank"> /discord/users/500527985061789711 </a> <br>
 > Using Twitter User Api: 

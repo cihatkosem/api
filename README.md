@@ -55,13 +55,3 @@ axios.get(`https://api.drizzlydeveloper.xyz/weather/${location}`)
 
 <a href="https://drizzlydeveloper.xyz/" target="_blank">Drizzly Developer</a> ❤ 
 <a href="https://drizzlydeveloper.xyz/@cihatksm" target="_blank">CihatKsm</a>
-
-### 📈 Stats:
-<a href="https://stats.uptimerobot.com/QAoJjhX990" target="_blank"> 
-  <img style="width: 150px;" src="https://uptimerobot.com/assets/images/uptimerobot-logo.svg"> 
-</a>
-
-<br><br>
-
-<a href="https://drizzlydeveloper.xyz/" target="_blank">Drizzly Developer / Api</a> ❤ 
-<a href="https://drizzlydeveloper.xyz/@cihatksm" target="_blank">CihatKsm</a>

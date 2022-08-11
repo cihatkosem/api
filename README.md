@@ -7,7 +7,7 @@
 ```js
 //for nodejs
 const axios = require('axios').default;
-axios.get(`https://drizzlydeveloper.xyz/api/drizzly/users/${username || id}`)
+axios.get(`https://drizzlydeveloper.xyz/api/drizzly/users/${username}`)
   .then(function (response) { console.log(response) })
   .catch(function (error) { console.log(error) })
 ```

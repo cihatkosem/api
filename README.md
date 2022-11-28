@@ -27,7 +27,7 @@ axios.get(`https://api.drizzlydeveloper.xyz/api/discord/users/${id}`)
 ```js
 //for nodejs
 const axios = require('axios').default;
-axios.get(`https://drizzlydeveloper.xyz/api/twitter/users/${id}`)
+axios.get(`https://drizzlydeveloper.xyz/api/twitter/users/${username}`)
   .then(function (response) { console.log(response) })
   .catch(function (error) { console.log(error) })
 ```
